@@ -1,4 +1,11 @@
 <?php return array (
+  'blade-ui-kit/blade-ui-kit' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'BladeUIKit\\BladeUIKitServiceProvider',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 
@@ -36,6 +43,13 @@
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    ),
+  ),
+  'laravel/ui' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Ui\\UiServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
