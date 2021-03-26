@@ -1,0 +1,23 @@
+hr {
+    border-top: 1px dashed rgb(202, 158, 158);
+  }
+
+  .input-group-prepend.numbers {
+    width : 45%;
+  }
+  
+  .input-group-prepend span {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .upright {
+    
+    writing-mode: vertical-rl;  
+    text-orientation: upright; 
+  }
+
+  .input-group-text:after {
+    content:"*";
+    color:red;
+  }
