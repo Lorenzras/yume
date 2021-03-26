@@ -163,8 +163,9 @@
 
 
     <div class="col-12">
-        <button type="submit" class="btn btn-lg btn-primary btn-block">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">{{ __('Save') }}</button>
     </div>
+
     </form>
     </div>
 
