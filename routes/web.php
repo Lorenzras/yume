@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
- Route::get('/nippo', function () {
-    
-    return view('nippo');
-}); 
 
 Auth::routes();
+
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('home');
+Route::get('/nippo', [App\Http\Controllers\HomeController::class, 'nippo'])->name('nippo');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

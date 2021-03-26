@@ -15,7 +15,7 @@
         </div>
         <input type="date" class="form-control" value="" id="date_today" required>
     </div>
-    
+
     <div class="col-12">
         <hr class="dashed">
     </div>
@@ -48,7 +48,7 @@
         <input type="number" class="form-control" value="0" id="mendansu" required>
     </div>
 
-   
+
     <div class=" form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Settlements') }}</span>
@@ -76,7 +76,7 @@
         </div>
         <input type="number" class="form-control" value="0" id="mendansu" required>
     </div>
-    
+
 
     <div class="col-12">
         <hr class="dashed">
@@ -137,7 +137,7 @@
         </div>
         <input type="number" class="form-control" value="0" id="mendansu" required>
     </div>
-   
+
     <div class="col-12">
         <hr class="dashed">
     </div>
@@ -160,8 +160,8 @@
         </div>
         <textarea class="form-control" rows="5" id="comment" required></textarea>
     </div>
-    
-    
+
+
     <div class="col-12">
         <button type="submit" class="btn btn-lg btn-primary btn-block">{{ __('Submit') }}</button>
     </div>
@@ -169,5 +169,5 @@
     </div>
 
 
-    
+
 @endsection
