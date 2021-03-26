@@ -3,7 +3,7 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ URL::asset('css/form_nippo.css') }}">
-
+<link rel="stylesheet" href="{{ URL::asset('css/form_global.css') }}">
 
 <div class="container">
   <!-- Content here -->
