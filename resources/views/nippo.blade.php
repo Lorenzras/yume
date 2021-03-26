@@ -24,28 +24,28 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Interviews') }}</span>
         </div>
-        <input type="number" class="form-control" value="0" id="mendansu" required>
+        <input type="number" class="form-control" value="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
     <div class=" form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Assistances') }}</span>
         </div>
-        <input type="number" class="form-control" value="0" id="mendansu" required>
+        <input type="number" class="form-control" value="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Purchases') }}</span>
         </div>
-        <input type="number" class="form-control" value="0" id="mendansu" required>
+        <input type="number" class="form-control" value="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Contracts') }}</span>
         </div>
-        <input type="number" class="form-control" value="0" id="mendansu" required>
+        <input type="number" class="form-control" value="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
 
@@ -53,28 +53,28 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Settlements') }}</span>
         </div>
-        <input type="number" class="form-control" value="0" id="mendansu" required>
+        <input type="number" class="form-control" value="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Intermediaries') }}</span>
         </div>
-        <input type="number" class="form-control" value="0" id="mendansu" required>
+        <input type="number" class="form-control" value="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Distributions') }}</span>
         </div>
-        <input type="number" class="form-control" value="0" id="mendansu" required>
+        <input type="number" class="form-control" value="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Rollers') }}</span>
         </div>
-        <input type="number" class="form-control" value="0" id="mendansu" required>
+        <input type="number" class="form-control" value="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
 
