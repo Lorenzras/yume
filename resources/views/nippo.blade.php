@@ -7,8 +7,14 @@
 
 <div class="container">
   <!-- Content here -->
-  <hr class="dashed"/>
+
+
     <form class="row g-3">
+
+        <div class="col-12"><legend >{{ __('Date') }}</legend></div>
+        <div class="col-12">
+            <hr class="dashed">
+        </div>
     <div class=" form-group input-group col-12 ">
         <div class="input-group-prepend ">
             <span class="input-group-text" id="">{{ __('Date') }}</span>
@@ -16,6 +22,7 @@
         <input type="date" class="form-control" value="" id="date_today" required>
     </div>
 
+    <div class="col-12"><legend >Numbers</legend></div>
     <div class="col-12">
         <hr class="dashed">
     </div>
@@ -77,7 +84,7 @@
         <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
-
+    <div class="col-12"><legend >Money</legend></div>
     <div class="col-12">
         <hr class="dashed">
     </div>
@@ -96,6 +103,7 @@
         <input type="number" class="form-control" placeholder="0"  pattern="[0-9]*" id="mendansu" required>
     </div>
 
+    <div class="col-12"><legend >Story</legend></div>
     <div class="col-12">
         <hr class="dashed">
     </div>
@@ -138,6 +146,7 @@
         <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
+    <div class="col-12"><legend >Story</legend></div>
     <div class="col-12">
         <hr class="dashed">
     </div>
