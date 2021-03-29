@@ -6,6 +6,11 @@
 
 require('./bootstrap');
 
+import moment from 'moment';
+window.moment = require('moment');
+
+console.log(moment().format());
+
 window.Vue = require('vue').default;
 
 /**
@@ -27,6 +32,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+
 const app = new Vue({
     el: '#app',
 });
+
+

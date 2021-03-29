@@ -8,7 +8,6 @@
 <div class="container">
   <!-- Content here -->
 
-
     <form class="row g-3">
 
         <div class="col-12"><legend >{{ __('Date') }}</legend></div>
@@ -183,17 +182,5 @@
 
     </div>
 
-    <script>
-        window.onload = function() {
-        var today = new Date();
-        var month = (today.getMonth()+1);
-        if ((month+'').length == 1) {
-            month = "0" + month;
-        }
-        var date = today.getFullYear()+'-' +month+'-'+today.getDate();
-        document.getElementById("date_today").value = date;
-
-        }
-    </script>
 
 @endsection
