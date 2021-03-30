@@ -1,15 +1,21 @@
 @extends('layouts.app')
 
+
+@push('header')
+<link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('img/favicon.ico') }}">
+@endpush
+
 @section('content')
 
 <link rel="stylesheet" href="{{ URL::asset('css/form_nippo.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('css/form_global.css') }}">
 
+
 <div class="container">
   <!-- Content here -->
   
     <form class="row g-3">
-        <div class="col-12"><legend >{{ __('Date') }}</legend></div>
+        <div class="col-12"><h1>{{ __('Journal') }}</h1></div>
         <div class="col-12">
             <hr class="dashed">
         </div>
@@ -20,7 +26,7 @@
         <input type="date" data-date-format="YYYY-MM-DD" class="form-control" value="" id="date_picker" required>
     </div>
 
-    <div class="col-12"><legend >Numbers</legend></div>
+    <div class="col-12"><legend >{{ __('Job') }}</legend></div>
     <div class="col-12">
         <hr class="dashed">
     </div>
@@ -29,7 +35,7 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Interviews') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="interview" required>
+        <input type="number" class="form-control" placeholder="0"  pattern="[0-9]*" id="interview" required>
     </div>
 
     <div class=" form-group input-group col-sm-6">
@@ -53,7 +59,7 @@
         <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
-
+    
     <div class=" form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Settlements') }}</span>
@@ -82,7 +88,7 @@
         <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
-    <div class="col-12"><legend >Money</legend></div>
+    <div class="col-12"><legend >{{ __('Type') }}</legend></div>
     <div class="col-12">
         <hr class="dashed">
     </div>
@@ -100,8 +106,8 @@
         </div>
         <input type="number" class="form-control" placeholder="0"  pattern="[0-9]*" id="mendansu" required>
     </div>
-
-    <div class="col-12"><legend >Story</legend></div>
+    <!-- Money -->
+    <div class="col-12"><legend >{{ __('Contract Details') }}</legend></div>
     <div class="col-12">
         <hr class="dashed">
     </div>
@@ -110,41 +116,41 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Brokerage Fee') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
+        <input type="number" class="form-control" placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Loan Agency') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
+        <input type="number" class="form-control" placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
-            <span class="input-group-text" placeholder="0" id="">{{ __('Fine') }}</span>
+            <span class="input-group-text" id="">{{ __('Fine') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
+        <input type="number" class="form-control" placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
 
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Fire Insurance') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
+        <input type="number" class="form-control"placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Reform') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
+        <input type="number" class="form-control" placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Solar Panel') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
+        <input type="number" class="form-control" placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
 
-    <div class="col-12"><legend >Story</legend></div>
+    <div class="col-12"><legend >{{ __('Reflections') }}</legend></div>
     <div class="col-12">
         <hr class="dashed">
     </div>
@@ -194,7 +200,7 @@ window.onload = function() {
      $(function () {
 
         //$('#example').datetimepicker({"useCurrent":true});
-        $('#date_picker').val(moment().format("YYYY-MM-DD"));
+        $('#date_picker ').val(moment().format("YYYY-MM-DD"));
     }); 
     
   

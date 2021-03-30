@@ -30,5 +30,10 @@
     "Solar Panel" : "太陽光",
     "Achievement" : "本日の成功事例",
     "Failures" : "本日の失敗事例",
-    "Learned" : "本日の学んだこと事例"
+    "Learned" : "本日の学んだこと事例",
+    "Job" : "業務内容",
+    "Contract Details" : "契約詳細",
+    "Journal" : "日報",
+    "Type":"種類",
+    "Reflections" : "振り返り"
 }

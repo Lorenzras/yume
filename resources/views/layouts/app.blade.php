@@ -13,7 +13,7 @@
     
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/ja.js" defer></script>
-    
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -21,7 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    @stack('header');
 </head>
 <body>
     <div id="app">
