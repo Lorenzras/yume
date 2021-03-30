@@ -195,7 +195,7 @@
 @push('footer')
 
 
-<script>
+<script defer>
 window.onload = function() {
      $(function () {
 
