@@ -12,6 +12,6 @@ hr {
 
 .logo {
     top:0px;
-    width:30px;
+    max-width:40px;
     height:auto;
 }
