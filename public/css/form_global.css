@@ -9,3 +9,9 @@ hr {
     border-top: 1px dashed rgb(202, 158, 158);
     margin-top: 0;
   }
+
+.logo {
+    top:0px;
+    width:30px;
+    height:auto;
+}

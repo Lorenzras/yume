@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', '日報')
 
 @push('header')
 <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('img/favicon.ico') }}">
