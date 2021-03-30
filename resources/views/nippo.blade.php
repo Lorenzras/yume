@@ -7,9 +7,8 @@
 
 <div class="container">
   <!-- Content here -->
-
+  
     <form class="row g-3">
-
         <div class="col-12"><legend >{{ __('Date') }}</legend></div>
         <div class="col-12">
             <hr class="dashed">
@@ -18,7 +17,7 @@
         <div class="input-group-prepend ">
             <span class="input-group-text" id="">{{ __('Date') }}</span>
         </div>
-        <input type="date" data-date-format="YYYY-MM-DD" class="form-control" value="" id="date_today" required>
+        <input type="date" data-date-format="YYYY-MM-DD" class="form-control" value="" id="date_picker" required>
     </div>
 
     <div class="col-12"><legend >Numbers</legend></div>
@@ -179,8 +178,26 @@
 
     </form>
 
-
-    </div>
+</div>
 
 
 @endsection
+
+
+@push('footer')
+<script>
+
+</script>
+
+<script>
+window.onload = function() {
+     $(function () {
+
+        //$('#example').datetimepicker({"useCurrent":true});
+        $('#date_picker').val(moment().format("YYYY-MM-DD"));
+    }); 
+    
+  
+};
+</script>
+@endpush

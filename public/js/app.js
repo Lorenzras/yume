@@ -1886,6 +1886,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+
+window.moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+console.log(moment__WEBPACK_IMPORTED_MODULE_0___default()().format());
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 /**
  * The following block of code may be used to automatically register your
@@ -1907,9 +1910,6 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
-
-window.moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-console.log(moment__WEBPACK_IMPORTED_MODULE_0___default()().format());
 
 /***/ }),
 
