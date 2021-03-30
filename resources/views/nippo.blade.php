@@ -3,6 +3,7 @@
 
 @push('header')
 <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('img/favicon.ico') }}">
+<link rel="apple-touch-icon" href="{{ URL::asset('img/nippo.png') }}">
 @endpush
 
 @section('content')
@@ -191,9 +192,7 @@
 
 
 @push('footer')
-<script>
 
-</script>
 
 <script>
 window.onload = function() {

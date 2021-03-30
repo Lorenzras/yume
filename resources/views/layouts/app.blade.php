@@ -21,7 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @stack('header');
+    @stack('header')
 </head>
 <body>
     <div id="app">
