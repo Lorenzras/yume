@@ -5,13 +5,10 @@
 @push('header')
 <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('img/favicon.ico') }}">
 <link rel="apple-touch-icon" href="{{ URL::asset('img/nippo.png') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/form_nippo.css') }}">
 @endpush
 
 @section('content')
-
-<link rel="stylesheet" href="{{ URL::asset('css/form_nippo.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/form_global.css') }}">
-
 
 <div class="container">
   <!-- Content here -->
@@ -193,8 +190,6 @@
 
 
 @push('footer')
-
-
 <script defer>
 window.onload = function() {
      $(function () {
