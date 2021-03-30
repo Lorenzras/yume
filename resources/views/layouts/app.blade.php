@@ -29,7 +29,7 @@
             <div class="container">
                 
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ URL::asset('img/nav_icon.png') }}" class="logo" alt="">
+                <img src="{{ URL::asset('img/nav_icon.png') }}" width="30px" class="logo" alt="">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
