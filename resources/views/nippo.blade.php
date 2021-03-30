@@ -34,7 +34,7 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Interviews') }}</span>
         </div>
-        <input type="number" inputmode="decimal" class="form-control" placeholder="0"  pattern="[0-9]*" id="interview" required>
+        <input type="number" class="form-control" placeholder="0"  pattern="[0-9]*" id="interview" required>
     </div>
 
     <div class=" form-group input-group col-sm-6">
@@ -115,38 +115,38 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Brokerage Fee') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Loan Agency') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Fine') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
 
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Fire Insurance') }}</span>
         </div>
-        <input type="number" class="form-control"placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Reform') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Solar Panel') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" id="mendansu" required>
     </div>
 
     <div class="col-12"><legend >{{ __('Reflections') }}</legend></div>
