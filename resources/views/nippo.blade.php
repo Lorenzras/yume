@@ -34,7 +34,7 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Interviews') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0"  pattern="[0-9]*" id="interview" required>
+        <input type="number" inputmode="decimal" class="form-control" placeholder="0"  pattern="[0-9]*" id="interview" required>
     </div>
 
     <div class=" form-group input-group col-sm-6">
