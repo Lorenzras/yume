@@ -38,7 +38,7 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center">
-                    <img src="{{ asset('img/yumenootetudai.png') }}" class="img-welcome img-fluid img-thumbnail"　alt="">
+                    <img src="{{ asset('img/yumenootetudai.png') }}" class="img-welcome "　alt="">
                 </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
