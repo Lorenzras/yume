@@ -10,7 +10,7 @@
     <title>@yield('title') - {{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    
+
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/ja.js" defer></script>
 
@@ -22,16 +22,17 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('css/form_global.css') }}">
-    
+
     @stack('header')
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
             <div class="container">
-                
+
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ URL::asset('img/nav_icon.png') }}" width="30px" class="logo" alt="">
+                <img src="{{ URL::asset('img/nav_icon.png') }}" width="30px" class="d-inline-block align-top" class="logo" alt="">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -60,6 +61,7 @@
                                 </li>
                             @endif
                         @else
+                            @stack('nav')
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -77,6 +79,7 @@
                                     </form>
                                 </div>
                             </li>
+
                         @endguest
                     </ul>
                 </div>

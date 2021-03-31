@@ -8,11 +8,17 @@
 <link rel="stylesheet" href="{{ URL::asset('css/form_nippo.css') }}">
 @endpush
 
+
+@push('nav')
+<li class="nav-item"> <a href="#" class="nav-link"><i class="fa fa-fw fa-calendar fa-2x"></i> </a> </li>
+@endpush
+
+
 @section('content')
 
 <div class="container">
   <!-- Content here -->
-  
+
     <form class="row g-3">
         <div class="col-12"><h1>{{ __('Journal') }}</h1></div>
         <div class="col-12">
@@ -58,7 +64,7 @@
         <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" id="mendansu" required>
     </div>
 
-    
+
     <div class=" form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Settlements') }}</span>
@@ -196,9 +202,9 @@ window.onload = function() {
 
         //$('#example').datetimepicker({"useCurrent":true});
         $('#date_picker ').val(moment().format("YYYY-MM-DD"));
-    }); 
-    
-  
+    });
+
+
 };
 </script>
 @endpush
