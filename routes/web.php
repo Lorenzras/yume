@@ -17,5 +17,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
-Route::get('/nippo', [App\Http\Controllers\HomeController::class, 'nippo'])->name('nippo');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+
+Route::get('/nippo', [App\Http\Controllers\NippoController::class, 'nippo'])->name('nippo');
+Route::get('/nippo_sample', [App\Http\Controllers\NippoController::class, 'nippo_sample'])->name('nippo_sample');

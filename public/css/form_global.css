@@ -11,3 +11,8 @@ hr {
   }
 
   body { padding-top: 70px; }
+
+td {
+
+    word-break:break-all;
+}

@@ -29,8 +29,7 @@ class HomeController extends Controller
 
     public function nippo()
     {
-        
-        return view('nippo');
+        return view('nippo.main');
     }
 
     public function welcome()
