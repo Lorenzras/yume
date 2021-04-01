@@ -10,9 +10,12 @@ hr {
     margin-top: 0;
   }
 
-  body { padding-top: 70px; }
+body { padding-top: 70px; }
 
 td {
 
     word-break:break-all;
+    padding-right:0;
+    padding-left:0;
+    
 }
