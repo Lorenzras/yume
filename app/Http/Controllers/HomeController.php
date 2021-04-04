@@ -29,7 +29,7 @@ class HomeController extends Controller
 
     public function nippo()
     {
-        
+
         return view('nippo');
     }
 
@@ -37,4 +37,5 @@ class HomeController extends Controller
     {
         return view('welcome');
     }
+
 }
