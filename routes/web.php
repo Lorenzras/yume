@@ -20,20 +20,22 @@ Auth::routes();
 
 
 Route::get('/emailtry', function () {
+    //Carbon\Carbon::setLocale(config('app.locale'));
+    $time = Carbon\Carbon::now()->toDayDateTimeString();
     $to_name = 'Lorenz';
     $to_email = 'lenzras@gmail.com';
-    $data = array('name'=>"Lenz", "body" => "Try lang ulit bro.");
+    $data = array('name'=>"Lenz", "body" => "Try lang ulit bro. Oras: " . $time);
 
     Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
         $message->to($to_email, $to_name)
                 ->subject('JRS Team Testing email.');
-        $message->from('jrsteam@smartwems.com','domain:smartwems');
+        $message->from('jrsamaoed@gmail.com','domain:smartwems');
     });
 
 
      $to_name = 'Jeff';
     $to_email = 'darksil3nt17@icloud.com';
-    $data = array('name'=>"Jeff", "body" => "Try lang bro.");
+    $data = array('name'=>"Jeff", "body" => "Try lang bro. Oras: " . $time );
 
     Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
         $message->to($to_email, $to_name)
@@ -43,7 +45,7 @@ Route::get('/emailtry', function () {
 
     $to_name = 'Rodel';
     $to_email = 'rrsalvadorjr@gmail.com';
-    $data = array('name'=>"Rodel", "body" => "Try lang bro.");
+    $data = array('name'=>"Rodel", "body" => "Try lang bro. Oras: " . $time);
 
     Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
         $message->to($to_email, $to_name)
@@ -51,7 +53,7 @@ Route::get('/emailtry', function () {
         $message->from('jrsteam@smartwems.com','domain:smartwems');
     });
 
-    return 'Try lang.';
+    return 'SENT! Try lang.';
 });
 
 
