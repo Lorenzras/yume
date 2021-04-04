@@ -27,17 +27,18 @@ Route::get('/emailtry', function () {
     Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
         $message->to($to_email, $to_name)
                 ->subject('JRS Team Testing email.');
-        $message->from('jrsamaoed@gmail.com','Smartwems');
+        $message->from('jrsteam@smartwems.com','domain:smartwems');
     });
 
-    $to_name = 'Jeff';
+
+     $to_name = 'Jeff';
     $to_email = 'darksil3nt17@icloud.com';
     $data = array('name'=>"Jeff", "body" => "Try lang bro.");
 
     Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
         $message->to($to_email, $to_name)
                 ->subject('JRS Team Testing email.');
-        $message->from('jrsamaoed@gmail.com','Smartwems');
+        $message->from('jrsteam@smartwems.com','domain:smartwems');
     });
 
     $to_name = 'Rodel';
@@ -47,7 +48,7 @@ Route::get('/emailtry', function () {
     Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
         $message->to($to_email, $to_name)
                 ->subject('JRS Team Testing email.');
-        $message->from('jrsamaoed@gmail.com','Smartwems');
+        $message->from('jrsteam@smartwems.com','domain:smartwems');
     });
 
     return 'Try lang.';
