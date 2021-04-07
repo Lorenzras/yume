@@ -10,13 +10,16 @@ class Nippo extends Model
 {
     use HasFactory;
 
-    public function get_thisday(){
-        return $this->all();
-        //return $this->where('generated_at',Carbon::now()->toDateString())->get();
-    }
 
     public function interview($input){
         $this->interview = $input;
+        $this->save();
+    }
+
+    public function create_today(){
+        $date_today = Carbon::now()->toDateString();
+        $this->generated_at = $date_today;
+        $this->user_id = auth()->user()->id;
         $this->save();
     }
 

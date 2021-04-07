@@ -40,6 +40,11 @@ class NippoController extends Controller
     {
         $nippo = new Nippo;
         $nippo = $nippo->get_today();
+
+        if($nippo == null){
+            $nippo = new Nippo;
+            $nippo->create_today();
+        }
         return $this->edit($nippo);
 
     }
