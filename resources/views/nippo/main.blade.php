@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('nippo.layout')
 
 @section('title', '日報')
 

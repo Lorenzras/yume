@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nippo;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class NippoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *

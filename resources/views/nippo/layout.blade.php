@@ -10,8 +10,6 @@
 
 
 @push('nav')
-<li class="nav-item"> <a href="{{ route('nippo_sample') }}" class="nav-link"><i class="fa fa-fw fa-calendar fa-2x"></i> </a> </li>
-<li class="nav-item"> <a href="{{ route('nippo') }}" class="nav-link"><i class="fa fa-fw fa-calendar fa-2x"></i> </a> </li>
 
 @endpush
 
