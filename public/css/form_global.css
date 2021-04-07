@@ -2,9 +2,15 @@ select,   textarea,   input[type="text"],   input[type="password"], input[type="
 legend {
     margin-bottom: 0;
     margin-top: 16px;
+
     padding-bottom: 0;
     display:inline-block;
 }
+
+.form-control {
+    font-size: 16px;
+}
+
 hr {
     border-top: 1px dashed rgb(202, 158, 158);
     margin-top: 0;
@@ -17,5 +23,5 @@ td {
     word-break:break-all;
     padding-right:0;
     padding-left:0;
-    
+
 }

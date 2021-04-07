@@ -10,7 +10,7 @@
 
 
 @push('nav')
-
+<li class="nav-item"> <a href="{{ route('welcome') }}" class="nav-link"><i class="fa fa-fw fa-home fa-lg"></i>&nbsp; {{ __('Home') }}</a> </li>
 @endpush
 
 

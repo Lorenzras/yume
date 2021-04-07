@@ -9,11 +9,6 @@
 @endpush
 
 
-@push('nav')
-<li class="nav-item"> <a href="#" class="nav-link"><i class="fa fa-fw fa-calendar fa-2x"></i> </a> </li>
-@endpush
-
-
 @section('content')
 
 <div class="container">
