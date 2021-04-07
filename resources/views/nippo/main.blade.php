@@ -1,13 +1,13 @@
 @extends('nippo.layout')
 
-@section('title', '日報')
+
 
 @push('header')
 
 @endpush
 
 
-@section('content')
+@section('form')
 
 <div class="container">
   <!-- Content here -->
@@ -193,14 +193,17 @@
 
 
 @push('footer')
-<script defer>
+<script type="application/javascript" defer>
 window.onload = function() {
-     /* $(function () {
-
-        //$('#example').datetimepicker({"useCurrent":true});
-        $('#date_picker ').val(moment().format("YYYY-MM-DD"));
-    }); */
-
+    $(document).click(function (event) {
+        console.log('clicked DOM');
+    var clickover = $(event.target);
+    var $navbar = $(".navbar-collapse");
+    var _opened = $navbar.hasClass("in");
+    if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+        $navbar.collapse('hide');
+    }
+    });
 
 };
 </script>
