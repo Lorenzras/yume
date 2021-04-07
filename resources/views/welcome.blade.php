@@ -16,7 +16,7 @@
 
 @section('content')
 <body class="antialiased">
-    <div class="relative flex items-top justify-center  bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    <div class="relative flex items-top justify-center   bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         {{-- @if (Route::has('login'))
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                 @auth
@@ -46,7 +46,7 @@
 
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                アプリ詳細
+                                スマートフォンから日報の作成・提出が可能なシステムです。日報管理システムは、日報を管理・共有するシステムで、それぞれが入力した情報をデータ化して蓄積、分析できます。それにより、業務達成度の可視化、営業活動や商談交渉などの把握がスムーズになるため、PDCAサイクルを回しやすくなるでしょう。
                             </div>
                         </div>
                     </div>
