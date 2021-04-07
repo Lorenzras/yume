@@ -67,6 +67,7 @@ Route::get('/nippo/{nippo}/edit', [App\Http\Controllers\NippoController::class, 
 Route::put('/nippo/{nippo}', [App\Http\Controllers\NippoController::class, 'update'])->name('update');
 
 Route::get('/nippo/index', [App\Http\Controllers\NippoController::class, 'index'])->name('index');
+Route::get('/nippo/ranking', [App\Http\Controllers\NippoController::class, 'ranking'])->name('ranking');
 
 Route::get('/datatable-example', function(){
     return view('datatable-example');

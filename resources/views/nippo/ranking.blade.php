@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-8">
-                <h1>月報</h1>
+                <h1>{{ __('Ranking') }}</h1>
                 <div class="card">
                     <div class="card-body">
                         <label for="month"></label>

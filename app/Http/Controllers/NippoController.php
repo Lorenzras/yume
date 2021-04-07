@@ -21,7 +21,14 @@ class NippoController extends Controller
     public function index()
     {
         //
+
         return view('nippo.index');
+    }
+
+    public function ranking()
+    {
+        //
+        return view('nippo.ranking');
     }
 
     /**
@@ -47,6 +54,8 @@ class NippoController extends Controller
     {
         //
     }
+
+
 
     /**
      * Display the specified resource.

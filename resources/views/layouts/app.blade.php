@@ -32,8 +32,13 @@
             <div class="container">
 
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ URL::asset('img/nav_icon.png') }}" width="30px" class="d-inline-block align-top" class="logo" alt="">
-                    {{ config('app.name', 'Laravel') }}
+                <div class="row">
+                    <div class="col-xs-6 banner"><img src="{{ URL::asset('img/nav_icon.png') }}" width="40px" class="d-inline-block" class="logo" alt=""></div>
+                    <div class="col-xs-6">
+                        <div class="company-name">YUMETETSU</div>
+                        <div class="company-sub">株式会社　夢のおてつだい</div>
+                    </div>
+                </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

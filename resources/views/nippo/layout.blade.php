@@ -11,8 +11,9 @@
 
 @push('nav')
 <li class="nav-item"> <a href="{{ route('welcome') }}" class="nav-link"><i class="fa fa-fw fa-home fa-lg"></i>&nbsp; {{ __('Home') }}</a> </li>
+<li class="nav-item"> <a href="{{ route('create') }}" class="nav-link"><i class="fa fa-fw fa-pencil-square fa-lg"></i>&nbsp; {{ __('Report') }}</a> </li>
 <li class="nav-item"> <a href="{{ route('view') }}" class="nav-link"><i class="fa fa-fw fa-table fa-lg"></i>&nbsp; {{ __('View') }}</a> </li>
-<li class="nav-item"> <a href="{{ route('welcome') }}" class="nav-link"><i class="fa fa-fw fa-trophy fa-lg"></i>&nbsp; {{ __('Ranking') }}</a> </li>
+<li class="nav-item"> <a href="{{ route('ranking') }}" class="nav-link"><i class="fa fa-fw fa-trophy fa-lg"></i>&nbsp; {{ __('Ranking') }}</a> </li>
 @endpush
 
 
