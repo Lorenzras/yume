@@ -60,9 +60,12 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-Route::get('/nippo/create', [App\Http\Controllers\NippoController::class, 'create'])->name('create');
 
-Route::get('/nippo/{nippo}/edit', [App\Http\Controllers\NippoController::class, 'edit']);
-Route::put('/nippo/{nippo}', [App\Http\Controllers\NippoController::class, 'update']);
+Route::get('/nippo/create', [App\Http\Controllers\NippoController::class, 'create'])->name('create');
+Route::get('/nippo/view', [App\Http\Controllers\NippoController::class, 'index'])->name('view');
+Route::get('/nippo/{nippo}/edit', [App\Http\Controllers\NippoController::class, 'edit'])->name('edit');
+Route::put('/nippo/{nippo}', [App\Http\Controllers\NippoController::class, 'update'])->name('update');
+
+Route::get('/nippo/index', [App\Http\Controllers\NippoController::class, 'index'])->name('index');
 
 //Route::get('/nippo_sample', [App\Http\Controllers\NippoController::class, 'nippo_sample'])->name('nippo_sample');

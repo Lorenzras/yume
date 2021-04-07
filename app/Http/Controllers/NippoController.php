@@ -21,6 +21,7 @@ class NippoController extends Controller
     public function index()
     {
         //
+        return view('nippo.index');
     }
 
     /**
