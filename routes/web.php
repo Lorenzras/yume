@@ -19,7 +19,7 @@ Auth::routes();
 
 
 
-Route::get('/emailtry', function () {
+/* Route::get('/emailtry', function () {
     //Carbon\Carbon::setLocale(config('app.locale'));
     $time = Carbon\Carbon::now()->toDayDateTimeString();
     $to_name = 'Lorenz';
@@ -54,12 +54,15 @@ Route::get('/emailtry', function () {
     });
 
     return 'SENT! Try lang.';
-});
+}); */
 
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/nippo/create', [App\Http\Controllers\NippoController::class, 'create'])->name('create');
 
-Route::get('/nippo', [App\Http\Controllers\NippoController::class, 'nippo'])->name('nippo');
-Route::get('/nippo_sample', [App\Http\Controllers\NippoController::class, 'nippo_sample'])->name('nippo_sample');
+Route::get('/nippo/{nippo}/edit', [App\Http\Controllers\NippoController::class, 'edit']);
+Route::put('/nippo/{nippo}', [App\Http\Controllers\NippoController::class, 'update']);
+
+//Route::get('/nippo_sample', [App\Http\Controllers\NippoController::class, 'nippo_sample'])->name('nippo_sample');

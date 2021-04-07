@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'd96d5c56c2165a4479c698eb972afa101397070f',
+    'reference' => '035631857e33854dad0eecdd696fad92a8fb06f0',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -19,6 +19,15 @@
       array (
       ),
       'reference' => '9cb795bf30988e8c96dd3c40623c48a877bc6714',
+    ),
+    'barryvdh/laravel-debugbar' => 
+    array (
+      'pretty_version' => 'v3.5.4',
+      'version' => '3.5.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b8af309dea71eab3f2c942652969f518130228ee',
     ),
     'blade-ui-kit/blade-ui-kit' => 
     array (
@@ -454,7 +463,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'd96d5c56c2165a4479c698eb972afa101397070f',
+      'reference' => '035631857e33854dad0eecdd696fad92a8fb06f0',
     ),
     'laravel/sail' => 
     array (
@@ -509,6 +518,15 @@
       array (
       ),
       'reference' => '3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
+    ),
+    'maximebf/debugbar' => 
+    array (
+      'pretty_version' => 'v1.16.5',
+      'version' => '1.16.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6d51ee9e94cff14412783785e79a4e7ef97b9d62',
     ),
     'mockery/mockery' => 
     array (
@@ -1004,6 +1022,15 @@
       array (
       ),
       'reference' => 'f65f217b3314504a1ec99c2d6ef69016bb13490f',
+    ),
+    'symfony/debug' => 
+    array (
+      'pretty_version' => 'v4.4.20',
+      'version' => '4.4.20.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '157bbec4fd773bae53c5483c50951a5530a2cc16',
     ),
     'symfony/deprecation-contracts' => 
     array (
