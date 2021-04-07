@@ -3,9 +3,7 @@
 @section('title', '日報')
 
 @push('header')
-<link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('img/favicon.ico') }}">
-<link rel="apple-touch-icon" href="{{ URL::asset('img/nippo.png') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/form_nippo.css') }}">
+
 @endpush
 
 
@@ -161,7 +159,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text align-middle upright" id="">{{ __('Achievement') }}</span>
         </div>
-        <textarea method="post" class="form-control" rows="5" name="achievements" id="achievements" required>{{$nippo->achievements}}</textarea>
+        <textarea class="form-control" rows="5" name="achievements" id="achievements" required>{{$nippo->achievements}}</textarea>
     </div>
     <div class="form-group input-group col-12">
         <div class="input-group-prepend">
