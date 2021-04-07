@@ -22,10 +22,10 @@ class NippoFactory extends Factory
      */
     public function definition()
     {
-        $date_today = Carbon::now()->addDays(mt_rand(-10,10))->toDateString();
+        $date_today = Carbon::now()->addDays(mt_rand(-60,0))->toDateString();
         return [
             'generated_at' => $date_today,
-            'user_id' => 2
+            'user_id' => mt_rand(1,12)
 
         ];
     }

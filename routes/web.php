@@ -68,4 +68,7 @@ Route::put('/nippo/{nippo}', [App\Http\Controllers\NippoController::class, 'upda
 
 Route::get('/nippo/index', [App\Http\Controllers\NippoController::class, 'index'])->name('index');
 
+Route::get('/datatable-example', function(){
+    return view('datatable-example');
+});
 //Route::get('/nippo_sample', [App\Http\Controllers\NippoController::class, 'nippo_sample'])->name('nippo_sample');
