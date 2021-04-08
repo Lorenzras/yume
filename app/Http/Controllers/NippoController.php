@@ -40,13 +40,14 @@ class NippoController extends Controller
     {
         $nippo = new Nippo;
         $nippo = $nippo->get_today();
+        
 
         if($nippo == null){
-            $nippo = new Nippo;
-            $nippo->create_today();
+            return view('nippo.main', compact('nippo')); 
+        }else{
+            return redirect()->route('nippo.edit', $nippo);
         }
-        return $this->edit($nippo);
-
+        
     }
 
     /**
@@ -57,7 +58,11 @@ class NippoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
+        $this->updateOrCreate($request);
+        return redirect()->back()->with('success!','Message');
+        
     }
 
 
@@ -80,8 +85,10 @@ class NippoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Nippo $nippo)
-    {
+    {   
+        
         return view('nippo.main', compact('nippo'));
+        
     }
 
     /**
@@ -93,9 +100,8 @@ class NippoController extends Controller
      */
     public function update(Request $request, Nippo $nippo)
     {
-        //
-
-        $nippo->interview = $request->interview;
+        
+        /* $nippo->interview = $request->interview;
         $nippo->assistance = $request->assistance;
         $nippo->purchase = $request->purchase;
         $nippo->contract = $request->contract;
@@ -113,10 +119,40 @@ class NippoController extends Controller
         $nippo->solar_panel = $request->solar_panel;
         $nippo->achievements = $request->achievements;
         $nippo->failures = $request->failures;
-        $nippo->learnings = $request->learnings;
+        $nippo->learnings = $request->learnings; */
 
-        $nippo->save();
+        $this->updateOrCreate($request);
         return redirect()->back()->with('success!','Message');
+    }
+
+    private function updateOrCreate(Request $request){
+
+     
+        $nippo = Nippo::updateOrCreate(
+            ['generated_at' =>  request('generated_at'), 'user_id' => auth()->user()->id],
+            [
+                'generated_at' =>  request('generated_at'),
+                'user_id' => auth()->user()->id,
+                'interview' =>  request('interview'),
+                'assistance' =>  request('assistance'),
+                'purchase' =>  request('purchase'),
+                'contract' =>  request('contract'),
+                'settlement' =>  request('settlement'),
+                'intermediary' =>  request('intermediary'),
+                'distribution' =>  request('distribution'),
+                'roller' =>  request('roller'),
+                'buy' =>  request('buy'),
+                'sell' =>  request('sell'),
+                'brokerage' =>  request('brokerage'),
+                'loan' =>  request('loan'),
+                'fine' =>  request('fine'),
+                'reform' =>  request('reform'),
+                'solar_panel' =>  request('solar_panel'),
+                'achievements' =>  request('achievements'),
+                'failures' =>  request('failures'),
+                'learnings' =>  request('learnings')
+            ]
+        );
     }
 
     /**

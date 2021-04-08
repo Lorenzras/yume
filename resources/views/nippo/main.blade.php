@@ -11,10 +11,18 @@
 
 <div class="container">
   <!-- Content here -->
+    @if(isset($nippo) && !empty($nippo)) 
+      
+        <form  action="{{ route('nippo.update', $nippo) }}" method="POST" class="row g-3">
+        @method('put')
+    @else
+      
+        <form action="{{ route('nippo.store') }}" method="POST" class="row g-3">
+        
+    @endif
 
-<form  action="{{ route('update', $nippo) }}" method="POST" class="row g-3">
     @csrf
-    @method('PUT')
+    
     <div class="col-12"><h1>{{ __('Journal') }}</h1></div>
     <div class="col-12">
         <hr class="dashed">
@@ -23,7 +31,7 @@
         <div class="input-group-prepend ">
             <span class="input-group-text" id="">{{ __('Date') }}</span>
         </div>
-        <input type="date" data-date-format="YYYY-MM-DD" class="form-control" value={{$nippo->generated_at}}  id="generated_at" required>
+        <input type="date" data-date-format="YYYY-MM-DD" class="form-control" value="{{ old('generated_at', $nippo->generated_at ?? Carbon\Carbon::now()->toDateString() ) }}"  name="generated_at" required>
     </div>
 
     <div class="col-12"><legend >{{ __('Job') }}</legend></div>
@@ -35,28 +43,28 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Interviews') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0"  pattern="[0-9]*" value={{$nippo->interview}} name="interview" id="interview" required>
+        <input type="number" class="form-control" placeholder="0"  pattern="[0-9]*" value="{{ old('interview', $nippo->interview ?? 0) }}" name="interview" id="interview" required>
     </div>
 
     <div class=" form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Assistances') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value={{$nippo->assistance}} name="assistance" id="assistance" required>
+        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value="{{ old('assistance', $nippo->assistance ?? 0) }}" name="assistance" id="assistance" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Purchases') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value={{$nippo->purchase}} name="purchase" id="purchase" required>
+        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value="{{ old('purchase', $nippo->purchase ?? 0) }}" name="purchase" id="purchase" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Contracts') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value={{$nippo->contract}} name="contract" id="contract" required>
+        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value="{{ old('contract', $nippo->contract ?? 0) }}" name="contract" id="contract" required>
     </div>
 
 
@@ -64,28 +72,28 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Settlements') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value={{$nippo->settlement}} name="settlement" id="settlement" required>
+        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value="{{ old('settlement', $nippo->settlement ?? 0 ) }}" name="settlement" id="settlement" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Intermediaries') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value={{$nippo->intermediary}} name="intermediary" id="intermediary" required>
+        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value="{{ old('intermediary', $nippo->intermediary ?? 0 ) }}" name="intermediary" id="intermediary" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Distributions') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value={{$nippo->distribution}} name="distribution" id="distribution" required>
+        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value="{{ old('distribution', $nippo->distribution ?? 0 ) }}" name="distribution" id="distribution" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Rollers') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value={{$nippo->roller}} name="roller" id="roller" required>
+        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value="{{ old('roller', $nippo->roller ?? 0 ) }}" name="roller" id="roller" required>
     </div>
 
     <div class="col-12"><legend >{{ __('Type') }}</legend></div>
@@ -97,14 +105,14 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Buy') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value={{$nippo->buy}} name="buy" id="buy" required>
+        <input type="number" class="form-control" placeholder="0" pattern="[0-9]*" value="{{ old('buy', $nippo->buy ?? 0 ) }}" name="buy" id="buy" required>
     </div>
 
     <div class="form-group input-group col-sm-6">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Sell') }}</span>
         </div>
-        <input type="number" class="form-control" placeholder="0"  pattern="[0-9]*" value={{$nippo->sell}} name="sell" id="sell" required>
+        <input type="number" class="form-control" placeholder="0"  pattern="[0-9]*" value="{{ old('sell', $nippo->sell ?? 0 ) }}" name="sell" id="sell" required>
     </div>
     <!-- Money -->
     <div class="col-12"><legend >{{ __('Contract Details') }}</legend></div>
@@ -116,38 +124,38 @@
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Brokerage Fee') }}</span>
         </div>
-        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value={{$nippo->brokerage}}  name="brokerage"  id="brokerage" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value="{{ old('brokerage', $nippo->brokerage ?? 0 ) }}"  name="brokerage"  id="brokerage" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Loan Agency') }}</span>
         </div>
-        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value={{$nippo->loan}}  name="loan" id="loan" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value="{{ old('loan', $nippo->loan ?? 0 ) }}"  name="loan" id="loan" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Fine') }}</span>
         </div>
-        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value={{$nippo->fine}} name="fine" id="fine" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value="{{ old('fine', $nippo->fine ?? 0 ) }}" name="fine" id="fine" required>
     </div>
 
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Fire Insurance') }}</span>
         </div>
-        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value={{$nippo->fire_insurance}} name="fire_insurance" id="fire_insurance" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value="{{ old('fire_insurance', $nippo->fire_insurance ?? 0 ) }}" name="fire_insurance" id="fire_insurance" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Reform') }}</span>
         </div>
-        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value={{$nippo->reform}} name="reform" id="reform" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value="{{ old('reform', $nippo->reform ?? 0 ) }}" name="reform" id="reform" required>
     </div>
     <div class="form-group input-group col-sm-6 col-md-4">
         <div class="input-group-prepend numbers">
             <span class="input-group-text" id="">{{ __('Solar Panel') }}</span>
         </div>
-        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value={{$nippo->solar_panel}}  name="solar_panel"  id="solar_panel" required>
+        <input type="number" class="form-control" inputmode="decimal"  placeholder="0.00" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" value="{{ old('solar_panel', $nippo->solar_panel ?? 0 ) }}"  name="solar_panel"  id="solar_panel" required>
     </div>
 
     <div class="col-12"><legend >{{ __('Reflections') }}</legend></div>
@@ -159,19 +167,19 @@
         <div class="input-group-prepend">
             <span class="input-group-text align-middle upright" id="">{{ __('Achievement') }}</span>
         </div>
-        <textarea class="form-control" rows="5" name="achievements" id="achievements" required>{{$nippo->achievements}}</textarea>
+        <textarea class="form-control" rows="5" name="achievements" id="achievements" required>{{ old('achievements', $nippo->achievements ?? null ) }}</textarea>
     </div>
     <div class="form-group input-group col-12">
         <div class="input-group-prepend">
             <span class="input-group-text align-middle upright" id="">{{ __('Failures') }}</span>
         </div>
-        <textarea class="form-control" rows="5"  name="failures" id="failures" required>{{$nippo->failures}}</textarea>
+        <textarea class="form-control" rows="5"  name="failures" id="failures" required>{{ old('failures', $nippo->failures ?? null ) }}</textarea>
     </div>
     <div class="form-group input-group col-12 mb-5">
         <div class="input-group-prepend">
             <span class="input-group-text align-middle upright" id="">{{ __('Learned') }}</span>
         </div>
-        <textarea class="form-control" rows="5" name="learnings" id="learnings" required>{{$nippo->learnings}}</textarea>
+        <textarea class="form-control" rows="5" name="learnings" id="learnings" required>{{ old('learnings', $nippo->learnings ?? null) }}</textarea>
     </div>
 
 
