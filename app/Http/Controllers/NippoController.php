@@ -48,7 +48,7 @@ class NippoController extends Controller
         $nippo = $nippo->get_today();
         
         if($nippo == null){
-            return view('nippo.main', compact('nippo')); 
+            return redirect()->route('nippo.edit', Carbon::now()->toDateString()); 
         }else{
             //dd($nippo->generated_at);
             return redirect()->route('nippo.edit', $nippo->generated_at);
