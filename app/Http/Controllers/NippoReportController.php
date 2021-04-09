@@ -21,21 +21,22 @@ class NippoReportController extends Controller
 
     public function weekends($month){
         $month_days = Carbon::parse($month)->daysInMonth;
-        $month_now = Carbon::now()->month;
+        $month_now = Carbon::parse($month)->month;
         $month_first_day = Carbon::parse($month)->firstOfMonth();
         $month_last_day = Carbon::parse($month)->endOfMonth();
         $collection = collect([]);
-        
+        error_log("There are " . $month_days . " days");
+        error_log("Month is currently " . $month_days . " days");
         do {
             $weekend = $month_first_day->endOfWeek(Carbon::SATURDAY);
-            error_log("Weekend is".$weekend);
+            error_log("Weekend is ".$weekend);
             if($month_now == $weekend->month){
                 $collection[] =  $weekend->todatestring();
             }else{
                 $collection[] = $month_last_day->todatestring();
             }
             $month_first_day = $weekend->add(1, 'day');
-            //error_log($month_now."==".$weekend->month);
+            error_log($month_now."==".$weekend->month);
         } while ($month_now == $weekend->month);
         
         return $collection;
@@ -68,15 +69,15 @@ class NippoReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($month)
+    public function show($date_today)
     {
         //
+        $month = Carbon::parse($date_today)->format('Y-m');
         $nippo = new Nippo;
-        $nippo = $nippo->get_month($month);
-
-
-        $weeks = $this->weekends(Carbon::now()->todatestring());
-        $month = Carbon::now()->format('Y-m');
+        $nippo = $nippo->get_month(Carbon::parse($date_today)->format('Y-m'));
+        
+        $weeks = $this->weekends($month);
+        //$month = Carbon::now()->format('Y-m');
         
         return view('nippo.report', compact('nippo','weeks','month'));
     }
