@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Nippo;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class NippoController extends Controller
 {
@@ -21,14 +22,19 @@ class NippoController extends Controller
     public function index()
     {
         //
-
-        return view('nippo.index');
+        
+       
     }
+
+    
+
+    
 
     public function ranking()
     {
-        //
-        return view('nippo.ranking');
+    
+
+        return view('nippo.ranking',compact('nippo'));
     }
 
     /**
@@ -41,11 +47,11 @@ class NippoController extends Controller
         $nippo = new Nippo;
         $nippo = $nippo->get_today();
         
-
         if($nippo == null){
             return view('nippo.main', compact('nippo')); 
         }else{
-            return redirect()->route('nippo.edit', $nippo);
+            //dd($nippo->generated_at);
+            return redirect()->route('nippo.edit', $nippo->generated_at);
         }
         
     }
@@ -59,7 +65,6 @@ class NippoController extends Controller
     public function store(Request $request)
     {
         
-
         $this->updateOrCreate($request);
         return redirect()->back()->with('success!','Message');
         
@@ -84,10 +89,15 @@ class NippoController extends Controller
      * @param  \App\Models\Nippo  $nippo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Nippo $nippo)
+    public function edit($generated_at)
     {   
-        
-        return view('nippo.main', compact('nippo'));
+        $nippo = new Nippo;
+        $nippo = $nippo->get_day($generated_at);
+        if($nippo == null){
+            return view('nippo.main', compact('generated_at'));
+        }else{
+            return view('nippo.main', compact('nippo', 'generated_at'));
+        }
         
     }
 
@@ -98,31 +108,11 @@ class NippoController extends Controller
      * @param  \App\Models\Nippo  $nippo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Nippo $nippo)
+    public function update(Request $request, $generated_at)
     {
         
-        /* $nippo->interview = $request->interview;
-        $nippo->assistance = $request->assistance;
-        $nippo->purchase = $request->purchase;
-        $nippo->contract = $request->contract;
-        $nippo->settlement = $request->settlement;
-        $nippo->intermediary = $request->intermediary;
-        $nippo->distribution = $request->distribution;
-        $nippo->roller = $request->roller;
-        $nippo->buy = $request->buy;
-        $nippo->sell = $request->sell;
-        $nippo->brokerage = $request->brokerage;
-        $nippo->loan = $request->loan;
-        $nippo->fine = $request->fine;
-        $nippo->fire_insurance = $request->fire_insurance;
-        $nippo->reform = $request->reform;
-        $nippo->solar_panel = $request->solar_panel;
-        $nippo->achievements = $request->achievements;
-        $nippo->failures = $request->failures;
-        $nippo->learnings = $request->learnings; */
-
         $this->updateOrCreate($request);
-        return redirect()->back()->with('success!','Message');
+        return redirect()->route('nippo.edit', $generated_at);
     }
 
     private function updateOrCreate(Request $request){
@@ -165,4 +155,8 @@ class NippoController extends Controller
     {
         //
     }
+
+    
+
+    
 }

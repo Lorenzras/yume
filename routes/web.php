@@ -60,17 +60,14 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-Route::get('/nippo/view', [App\Http\Controllers\NippoController::class, 'index'])->name('view');
 
 Route::get('/nippo/{nippo}/edit', [App\Http\Controllers\NippoController::class, 'edit'])->name('nippo.edit');
 Route::put('/nippo/{nippo}/update', [App\Http\Controllers\NippoController::class, 'update'])->name('nippo.update');
 Route::get('/nippo/create', [App\Http\Controllers\NippoController::class, 'create'])->name('nippo.create');
 Route::post('/nippo/store', [App\Http\Controllers\NippoController::class, 'store'])->name('nippo.store');
 
-
-
-Route::get('/nippo/index', [App\Http\Controllers\NippoController::class, 'index'])->name('index');
-Route::get('/nippo/ranking', [App\Http\Controllers\NippoController::class, 'ranking'])->name('ranking');
+Route::get('/nippo/report/{month}', [App\Http\Controllers\NippoReportController::class, 'show'])->name('nippo.report');
+Route::get('/nippo/ranking', [App\Http\Controllers\NippoController::class, 'ranking'])->name('nippo.ranking');
 
 Route::get('/datatable-example', function(){
     return view('datatable-example');
