@@ -17,47 +17,6 @@ use Illuminate\Support\Facades\Mail;
 
 Auth::routes();
 
-
-
-/* Route::get('/emailtry', function () {
-    //Carbon\Carbon::setLocale(config('app.locale'));
-    $time = Carbon\Carbon::now()->toDayDateTimeString();
-    $to_name = 'Lorenz';
-    $to_email = 'lenzras@gmail.com';
-    $data = array('name'=>"Lenz", "body" => "Try lang ulit bro. Oras: " . $time);
-
-    Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
-        $message->to($to_email, $to_name)
-                ->subject('JRS Team Testing email.');
-        $message->from('jrsamaoed@gmail.com','domain:smartwems');
-    });
-
-
-     $to_name = 'Jeff';
-    $to_email = 'darksil3nt17@icloud.com';
-    $data = array('name'=>"Jeff", "body" => "Try lang bro. Oras: " . $time );
-
-    Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
-        $message->to($to_email, $to_name)
-                ->subject('JRS Team Testing email.');
-        $message->from('jrsteam@smartwems.com','domain:smartwems');
-    });
-
-    $to_name = 'Rodel';
-    $to_email = 'rrsalvadorjr@gmail.com';
-    $data = array('name'=>"Rodel", "body" => "Try lang bro. Oras: " . $time);
-
-    Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
-        $message->to($to_email, $to_name)
-                ->subject('JRS Team Testing email.');
-        $message->from('jrsteam@smartwems.com','domain:smartwems');
-    });
-
-    return 'SENT! Try lang.';
-}); */
-
-
-
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
@@ -67,7 +26,7 @@ Route::get('/nippo/create', [App\Http\Controllers\NippoController::class, 'creat
 Route::post('/nippo/store', [App\Http\Controllers\NippoController::class, 'store'])->name('nippo.store');
 
 Route::get('/nippo/report/{month}', [App\Http\Controllers\NippoReportController::class, 'show'])->name('nippo.report');
-Route::get('/nippo/ranking', [App\Http\Controllers\NippoController::class, 'ranking'])->name('nippo.ranking');
+Route::get('/nippo/ranking/{month}', [App\Http\Controllers\NippoRankingController::class, 'show'])->name('nippo.ranking');
 
 Route::get('/datatable-example', function(){
     return view('datatable-example');

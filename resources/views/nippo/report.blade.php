@@ -122,7 +122,7 @@
                         <div class="row">
                             <div class="col-6 col-md-3 ">
                             <span class="text-secondary">{{ __('Interviews') }}</span>
-                            <h4>{{ ($nippo_week = $nippo->whereBetween('generated_at',[$start, $end]))->sum('interview') }}</h4>
+                            <h4>{{ ($nippo_week = $nippo->whereBetween('generated_at',[$start->toDateString(), $end->toDateString()]))->sum('interview') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Assistances') }}</span>

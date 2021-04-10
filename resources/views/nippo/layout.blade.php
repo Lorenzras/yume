@@ -13,7 +13,7 @@
 <li class="nav-item"> <a href="{{ route('welcome') }}" class="nav-link"><i class="fa fa-fw fa-home fa-lg"></i>&nbsp; {{ __('Home') }}</a> </li>
 <li class="nav-item"> <a href="{{ route('nippo.create') }}" class="nav-link"><i class="fa fa-fw fa-pencil-square fa-lg"></i>&nbsp; {{ __('Report') }}</a> </li>
 <li class="nav-item"> <a href="{{ route('nippo.report', Carbon\carbon::now()->todateString()) }}" class="nav-link"><i class="fa fa-fw fa-table fa-lg"></i>&nbsp; {{ __('View') }}</a> </li>
-<li class="nav-item"> <a href="{{ route('nippo.ranking') }}" class="nav-link"><i class="fa fa-fw fa-trophy fa-lg"></i>&nbsp; {{ __('Ranking') }}</a> </li>
+<li class="nav-item"> <a href="{{ route('nippo.ranking', Carbon\carbon::now()->todateString()) }}" class="nav-link"><i class="fa fa-fw fa-trophy fa-lg"></i>&nbsp; {{ __('Ranking') }}</a> </li>
 @endpush
 
 

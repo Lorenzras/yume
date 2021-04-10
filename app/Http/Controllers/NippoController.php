@@ -27,16 +27,6 @@ class NippoController extends Controller
     }
 
     
-
-    
-
-    public function ranking()
-    {
-    
-
-        return view('nippo.ranking',compact('nippo'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *

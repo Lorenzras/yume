@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Nippo;
-use Carbon\Carbon;
+use Carbon\carbon;
 
-class NippoReportController extends Controller
+class NippoRankingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,33 +19,9 @@ class NippoReportController extends Controller
     {
         $this->middleware('auth');
     }
-    
     public function index()
     {
-        
-    }
-
-    public function weekends($month){
-        $month_days = Carbon::parse($month)->daysInMonth;
-        $month_now = Carbon::parse($month)->month;
-        $month_first_day = Carbon::parse($month)->firstOfMonth();
-        $month_last_day = Carbon::parse($month)->endOfMonth();
-        $collection = collect([]);
-        error_log("There are " . $month_days . " days");
-        error_log("Month is currently " . $month_days . " days");
-        do {
-            $weekend = $month_first_day->endOfWeek(Carbon::SATURDAY);
-            error_log("Weekend is ".$weekend);
-            if($month_now == $weekend->month){
-                $collection[] =  $weekend->todatestring();
-            }else{
-                $collection[] = $month_last_day->todatestring();
-            }
-            $month_first_day = $weekend->add(1, 'day');
-            error_log($month_now."==".$weekend->month);
-        } while ($month_now == $weekend->month);
-        
-        return $collection;
+        //
     }
 
     /**
@@ -77,16 +53,11 @@ class NippoReportController extends Controller
      */
     public function show($date_today)
     {
-        //
         $month = Carbon::parse($date_today)->format('Y-m');
         $nippo = new Nippo;
-        $nippo = $nippo->get_month(Carbon::parse($date_today)->format('Y-m'));
-        
-        
-        $weeks = $this->weekends($month);
-        //$month = Carbon::now()->format('Y-m');
-        
-        return view('nippo.report', compact('nippo','weeks','month'));
+        $nippo = $nippo->get_rankings_by_month(Carbon::parse($date_today)->format('Y-m'));
+
+        return view('nippo.ranking', compact('nippo','month') );
     }
 
     /**
