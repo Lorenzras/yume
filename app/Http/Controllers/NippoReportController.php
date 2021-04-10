@@ -76,6 +76,7 @@ class NippoReportController extends Controller
         $nippo = new Nippo;
         $nippo = $nippo->get_month(Carbon::parse($date_today)->format('Y-m'));
         
+        
         $weeks = $this->weekends($month);
         //$month = Carbon::now()->format('Y-m');
         

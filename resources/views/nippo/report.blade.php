@@ -21,37 +21,37 @@
                         <div class="row ">
                             <div class="col-6 col-md-3 ">
                             <span class="text-secondary">{{ __('Interviews') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('interview') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Assistances') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('assistance') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Purchases') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('purchase') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Contracts') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('contract') }}</h4>
                             </div>
                         </div>
                         <div class="row ">
                             <div class="col-6 col-md-3 ">
                             <span class="text-secondary">{{ __('Settlements') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('settlement') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Intermediaries') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('intermediary') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Distributions') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('distribution') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Rollers') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('roller') }}</h4>
                             </div>
                         </div>
                         <div class="col-12">
@@ -60,11 +60,11 @@
                         <div class="row">
                             <div class="col-6 col-md-6 ">
                             <span class="text-secondary">{{ __('Buy') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('buy') }}</h4>
                             </div>
                             <div class="col-6 col-md-6">
                             <span class="text-secondary">{{ __('Sell') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('sell') }}</h4>
                             </div>
                             
                         </div>
@@ -74,27 +74,27 @@
                         <div class="row ">
                             <div class="col-6 col-md-4 ">
                             <span class="text-secondary">{{ __('Brokerage Fee') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('brokerage') }}</h4>
                             </div>
                             <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Loan Agency') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('loan') }}</h4>
                             </div>
                             <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Fine') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('fine') }}</h4>
                             </div>
                             <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Fire Insurance') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('fire_insurance') }}</h4>
                             </div>
                             <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Reform') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('reform') }}</h4>
                             </div>
                             <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Solar Panel') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo->sum('solar_panel') }}</h4>
                             </div>
                         </div>
                     </div>
@@ -103,17 +103,17 @@
                 <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample{{ $loop->iteration }}" aria-expanded="false" aria-controls="collapseExample">
                     第{{ $loop->iteration }}週　
                     <h4>
-                    {{ $loop->iteration == 1 ? 
+                    {{
+                        ($start = $loop->iteration == 1 ? 
                         Carbon\carbon::parse($week)
-                        ->firstOfMonth()
-                        ->format("m月d日") :
+                        ->firstOfMonth() :
                         Carbon\carbon::parse($week)
-                        ->startOfWeek(Carbon\carbon::SUNDAY)
-                        ->format("m月d日")
-                    }} ~ 
-                    {{ Carbon\carbon::parse($week)
-                        ->format("m月d日")
-                    }}
+                        ->startOfWeek(Carbon\carbon::SUNDAY))->format('m月d日')
+
+                    }} <i class="fas fa-arrows-alt-h"></i>
+
+                    {{    ($end = Carbon\carbon::parse($week))->format('m月d日') }}
+    
                     </h4>
                 </button>
                 <div class="card collapse mb-2 mx-auto" id="collapseExample{{ $loop->iteration }}">
@@ -122,37 +122,37 @@
                         <div class="row">
                             <div class="col-6 col-md-3 ">
                             <span class="text-secondary">{{ __('Interviews') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ ($nippo_week = $nippo->whereBetween('generated_at',[$start, $end]))->sum('interview') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Assistances') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('assistance') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Purchases') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('purchase') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Contracts') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('contract') }}</h4>
                             </div>
                         </div>
                         <div class="row ">
                             <div class="col-6 col-md-3 ">
                             <span class="text-secondary">{{ __('Settlements') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('settlement') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Intermediaries') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('intermediary') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Distributions') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('distribution') }}</h4>
                             </div>
                             <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Rollers') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('roller') }}</h4>
                             </div>
                         </div>
                         <div class="col-12">
@@ -161,11 +161,11 @@
                         <div class="row">
                             <div class="col-6 col-md-6 ">
                             <span class="text-secondary">{{ __('Buy') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('buy') }}</h4>
                             </div>
                             <div class="col-6 col-md-6">
                             <span class="text-secondary">{{ __('Sell') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('sell') }}</h4>
                             </div>
                             
                         </div>
@@ -175,27 +175,27 @@
                         <div class="row ">
                             <div class="col-6 col-md-4 ">
                             <span class="text-secondary">{{ __('Brokerage Fee') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('brokerage') }}</h4>
                             </div>
                             <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Loan Agency') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('loan') }}</h4>
                             </div>
                             <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Fine') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('fine') }}</h4>
                             </div>
                             <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Fire Insurance') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('fire_insurance') }}</h4>
                             </div>
                             <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Reform') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('reform') }}</h4>
                             </div>
                             <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Solar Panel') }}</span>
-                            <h4>0</h4>
+                            <h4>{{ $nippo_week->sum('solar_panel') }}</h4>
                             </div>
                         </div>
                     </div>

@@ -18,7 +18,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <script src="https://use.fontawesome.com/fbfa880e2f.js"></script>
-
+    <script src="https://kit.fontawesome.com/fbba6dc03c.js" crossorigin="anonymous"></script>
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('css/form_global.css') }}">
@@ -100,7 +101,7 @@
             @yield('content')
         </main>
     </div>
-    <!-- @include('layouts/jq_hidemenu') -->
+
     <script type="application/javascript" defer>
         window.onload = function() {
             $(document).click(function (event) {
@@ -121,7 +122,7 @@
                     $navbar.collapse('hide');
                 }
             });
-            
+
             @stack('script')
         };
     </script>
