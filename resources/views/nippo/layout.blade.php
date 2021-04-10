@@ -19,7 +19,7 @@
 
 @section('content')
     @yield('form')
-    @stack('footer')
+    @include('layouts/jq_hidemenu')
 @endsection
 
 

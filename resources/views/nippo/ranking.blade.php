@@ -29,7 +29,3 @@
 
 
 @endsection
-
-@push('footer')
-
-@endpush

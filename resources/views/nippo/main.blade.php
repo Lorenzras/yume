@@ -193,11 +193,6 @@
 
 </div>
 
-
-@endsection
-
-
-@push('footer')
 <script type="application/javascript" >
 window.onload = function() {
     $("#generated_at").change(function () {
@@ -207,4 +202,9 @@ window.onload = function() {
     });
 };
 </script>
+
+@endsection
+
+@push('footer')
+    fussksdsd
 @endpush
