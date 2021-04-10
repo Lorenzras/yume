@@ -19,8 +19,10 @@
 
 @section('content')
     @yield('form')
-    @include('layouts/jq_hidemenu')
 @endsection
 
+@push('script')
+    @stack('script_sub')
+@endpush
 
 

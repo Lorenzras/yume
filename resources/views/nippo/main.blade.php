@@ -193,18 +193,14 @@
 
 </div>
 
-<script type="application/javascript" >
-window.onload = function() {
+@endsection
+
+@push('script_sub')
+
     $("#generated_at").change(function () {
         $d = $('#generated_at').val();
         console.log('/nippo/' + $d + '/edit');
         window.location.href = '/nippo/' + $d + '/edit';
     });
-};
-</script>
 
-@endsection
-
-@push('footer')
-    fussksdsd
 @endpush

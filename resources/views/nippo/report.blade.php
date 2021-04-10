@@ -212,14 +212,12 @@
 
 @endsection
 
-@push('footer')
-<script type="application/javascript" >
-window.onload = function() {
+@push('script_sub')
+
     $("#month_sel").change(function () {
         $d = $('#month_sel').val();
         console.log('/nippo/report/' + $d);
         window.location.href = '/nippo/report/' + $d;
     });
-};
-</script>
+
 @endpush
