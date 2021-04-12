@@ -16,6 +16,7 @@
                     <div class="card-header text-center">
                         <label for="month_sel"></label>
                         <input id="month_sel" type="month" name="month_sel" value="{{ $month }}">
+                        <a href="/all-tweets-csv" class="btn btn-primary">詳細はCSVとして保存</a>
                     </div>
                     <div class="card-body text-center">
                         <div class="row ">
