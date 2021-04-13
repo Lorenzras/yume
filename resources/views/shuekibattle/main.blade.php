@@ -85,6 +85,7 @@
 </div>
 <!-- /.card -->
 
+
 </div>
 <!-- /.container -->
 
@@ -92,7 +93,5 @@
 
 @push('script_sub')
 
-$(function() {
-  $('.selectpicker').selectpicker();
-});
+process.version;
 @endpush
