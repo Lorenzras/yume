@@ -99,7 +99,7 @@
 
 
         @yield('content')
- 
+
     </div>
 
     <script type="application/javascript" defer>
@@ -114,7 +114,7 @@
                 }
             });
 
-            $(window).scroll(function() {
+            /* $(window).scroll(function() {
                 console.log('logging');
                 var $navbar = $(".navbar-collapse");
                 var _opened = $navbar.hasClass("in");
@@ -122,10 +122,10 @@
                     $navbar.collapse('hide');
                 }
             });
-
+ */
             @stack('script')
 
-            
+
         };
     </script>
 

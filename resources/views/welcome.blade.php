@@ -22,7 +22,7 @@
         <div class="col-2">
             <img  src="{{ URL::asset('img/nav_icon.png') }}" class=" img-welcome d-inline-block" class="logo" alt="">
         </div>
-        <div class="col-4">
+        <div class="col-5">
             <div class="row">
                 <div class="col-12 apptitle glow">夢てつ</div>
                 <div class="col-12 appsub text-secondary">業務アプリ</div>
