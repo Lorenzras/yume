@@ -1,5 +1,30 @@
 .img-welcome {
-    width: 40%;
+    width: 100px;
     min-height:auto;
     align-self: flex-start;
+}
+
+.apptitle {
+    color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 60px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: left;     
+}
+
+/* .appsub {
+    color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 2vw; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: left;     
+} */
+
+body {
+    background-color: #FFFAD5;
+
 }
