@@ -22,31 +22,31 @@
         <div class="col-2">
             <img  src="{{ URL::asset('img/nav_icon.png') }}" class=" img-welcome d-inline-block" class="logo" alt="">
         </div>
-        <div class="col-3">
+        <div class="col-4">
             <div class="row">
-                <div class="col-12 apptitle">夢てつ</div>
-                <div class="col-12 appsub ">業務アプリ</div>
+                <div class="col-12 apptitle glow">夢てつ</div>
+                <div class="col-12 appsub text-secondary">業務アプリ</div>
             </div>
         </div>
     </div>
     <div class="row justify-content-center mb-3">
         <div class="col-10 mb-4 ">
-            <a class="btn btn-primary border-0 btn-lg btn-block shadow rounded-pill buttontext" href="{{ route('nippo.create') }}" role="button"><i class="fasbtn fas fa-edit"></i>日報</a>
+            <a class="btn btn-primary  btn-lg btn-block shadow rounded-pill buttontext" href="{{ route('nippo.create') }}" role="button"><i class="fasbtn fas fa-edit"></i>日報</a>
         </div>
         <div class="col-10 mb-4 ">
-            <a class="btn btn-lg btn-primary border-0 btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-users"></i>顧客管理</a>
+            <a class="btn btn-lg btn-primary btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-users"></i>顧客管理</a>
         </div>
         <div class="col-10 mb-4 ">
-            <a class="btn btn-lg btn-primary border-0 btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-images"></i>物件写真管理</a>
+            <a class="btn btn-lg btn-primary  btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-images"></i>物件写真管理</a>
         </div>
         <div class="col-10 mb-4 ">
-            <a class="btn btn-lg btn-primary border-0 btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-link"></i>リンク</a>
+            <a class="btn btn-lg btn-primary  btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-link"></i>リンク</a>
         </div>
         <div class="col-10 mb-4 ">
-            <a class="btn btn-lg btn-primary border-0 btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-store-alt"></i>店舗情報</a>
+            <a class="btn btn-lg btn-primary  btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-store-alt"></i>店舗情報</a>
         </div>
         <div class="col-10 mb-4 ">
-            <a class="btn btn-lg btn-primary border-0 btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-user-cog"></i>個人設定</a>
+            <a class="btn btn-lg btn-primary btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-user-cog"></i>個人設定</a>
         </div>
     </div>
 </div>
