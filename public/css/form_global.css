@@ -27,6 +27,13 @@ td {
 
 }
 
+
+
+.dropdown-item{
+    text-align: center;
+    color:white;
+}
+
 .banner {
     margin-right: 10px;
     margin-top: 0px;

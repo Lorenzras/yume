@@ -1,28 +1,52 @@
 .img-welcome {
-    width: 100px;
+    width: 20vw;
     min-height:auto;
     align-self: flex-start;
+    
 }
+
+.nav-item{
+    text-align: center;
+}
+
 
 .apptitle {
+    margin-top: 2vw;
     color: #111; 
     font-family: 'Helvetica Neue', sans-serif; 
-    font-size: 60px; 
+    font-size: 5vw; 
     font-weight: bold; 
-    letter-spacing: -1px; 
+    letter-spacing: 2px; 
     line-height: 1; 
-    text-align: left;     
+    text-align: left;    
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.164); 
 }
 
-/* .appsub {
+ .appsub {
     color: #111; 
     font-family: 'Helvetica Neue', sans-serif; 
-    font-size: 2vw; 
-    font-weight: bold; 
+    font-size: 3vw; 
+     
     letter-spacing: -1px; 
     line-height: 1; 
     text-align: left;     
-} */
+} 
+
+.buttontext {
+    font-weight: normal;
+    font-size: 2em;
+}
+
+.fasbtn {
+    padding-right: 4vw;
+    padding-left : 4vw;
+}
+
+.btn-primary {
+    background-color: #8CD8FF;
+    color: #3A2BA9;
+    text-align: left;
+}
 
 body {
     background-color: #FFFAD5;
