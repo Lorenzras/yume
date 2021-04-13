@@ -15,7 +15,7 @@
         </div>
         <div class="col-3">
             <div class="row">
-                <div class="col-12 apptitle"><h3>夢てつ</h3> </div>
+                <div class="col-12 apptitle"><h1>夢てつ</h1> </div>
                 <div class="col-12 "><h4>業務アプリ</h4> </div>
             </div>
         </div>
