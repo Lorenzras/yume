@@ -151,12 +151,10 @@
 @endsection
 
 @push('script_sub')
-    $d = $('#month_sel').val();
 
     $("#month_sel").change(function () {
-        
-        console.log('/nippo/ranking/' + $d);
-        window.location.href = '/nippo/ranking/' + $d;
+
+        window.location.href = '/nippo/ranking/' + $('#month_sel').val();
     });
 
     
@@ -164,7 +162,7 @@
     $("#category").change(function () {
         $.ajax({
             type:'get',
-            url: '/nippo/ranking/' + $d + '/' + $('#category').val(),
+            url: '/nippo/ranking/' + $('#month_sel').val() + '/' + $('#category').val(),
             data:{'month': $d},
             success:function(response){
                 //console.log(response);
