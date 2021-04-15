@@ -111,6 +111,7 @@
         <div class="col-xs-6 col-md-4">
 
             <select　class="custom-select" name="category" id="category">
+                <optgroup>
                 <option value="purchase">{{ __('Purchases') }}</option>
                 <option value="contract">{{ __('Contracts') }}</option>
                 <option value="intermediary">{{ __('Intermediaries') }}</option>
@@ -124,6 +125,7 @@
                 <option value="fire_insurance">{{ __('Fire Insurance') }}</option>
                 <option value="reform">{{ __('Reform') }}</option>
                 <option value="solar_panel">{{ __('Solar Panel') }}</option>
+                </optgroup>
             </select>
         </div>
     </div>
