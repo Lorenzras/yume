@@ -29,7 +29,6 @@ Route::post('/nippo/store', [App\Http\Controllers\NippoController::class, 'store
 
 Route::get('/nippo/report/{month}', [App\Http\Controllers\NippoReportController::class, 'show'])->name('nippo.report');
 Route::get('/nippo/ranking/{month}/{type}', [App\Http\Controllers\NippoRankingController::class, 'show_ranking'])->name('nippo_rankingtype');
-
 Route::get('/nippo/ranking/{month}', [App\Http\Controllers\NippoRankingController::class, 'show'])->name('nippo.ranking');
 
 
