@@ -16,7 +16,10 @@
                     <i class="fas fa-crown fa-5x"></i>
                 </div>
                 <div class="col-12">
-                    <h1 class="pagetitle ">{{ auth()->user()->name }}さんのランキング</h1>
+                    <div class="pagetitle ">{{ auth()->user()->name }}さん</div>
+                </div>
+                <div class="col-12">
+                    <h1 class="pagetitle ">ランキング</h1>
                 </div>
                     
             </div>
@@ -31,23 +34,23 @@
                         
                         <div class="col-6 col-*">
                         <span class="text-secondary">{{ __('Purchases') }}</span>
-                        <h4>{{ $nippo['totalPurchase'] }}</h4>
+                        <h2 >{{ $nippo['totalPurchase'] }}</h2>
                         </div>
                         <div class="col-6 col-*">
                         <span class="text-secondary">{{ __('Contracts') }}</span>
-                        <h4>{{ $nippo['totalContract'] }}</h4>
+                        <h2>{{ $nippo['totalContract'] }}</h2>
                         </div>
                         <div class="col-6 col-*">
                         <span class="text-secondary">{{ __('Intermediaries') }}</span>
-                        <h4>{{ $nippo['totalIntermediary'] }}</h4>
+                        <h2>{{ $nippo['totalIntermediary'] }}</h2>
                         </div>
                         <div class="col-6 col-*">
                         <span class="text-secondary">{{ __('Distributions') }}</span>
-                        <h4>{{ $nippo['totalDistribution'] }}</h4>
+                        <h2>{{ $nippo['totalDistribution'] }}</h2>
                         </div>
                         <div class="col-6 col-*">
                         <span class="text-secondary">{{ __('Rollers') }}</span>
-                        <h4>{{ $nippo['totalRoller'] }}</h4>
+                        <h2>{{ $nippo['totalRoller'] }}</h2>
                         </div>
                     </div>
                     <div class="col-12">
@@ -101,11 +104,12 @@
 
 <div class="container-fluid">
     <div class="row justify-content-center mb-3 mt-3">
-        <div class="col-5 d-flex align-items-end flex-column">
-            <h6 class="mt-2">種別を選択してください:</h6>
+        <div class=" col-5 pt-2">
+            <h1 class="pagetitle ">トップ５</h1>
         </div>
-        <div class="col-3">
-            <select name="category" id="category">
+        <div class="col-5">
+        <div class="text-secondary ">種別</div>
+        <select　class="custom-select" name="category" id="category">
                 <option value="purchase">{{ __('Purchases') }}</option>
                 <option value="contract">{{ __('Contracts') }}</option>
                 <option value="intermediary">{{ __('Intermediaries') }}</option>
@@ -127,7 +131,7 @@
         <table class="table table-hover" id="records_table">
         <thead>
             <tr>
-            <th scope="col">ランキング</th>
+            <th scope="col">ランク</th>
             <th scope="col">数字</th>
             <th scope="col">氏名</th>
             </tr>
