@@ -163,7 +163,7 @@
         $.ajax({
             type:'get',
             url: '/nippo/ranking/' + $('#month_sel').val() + '/' + $('#category').val(),
-            data:{'month': $d},
+            data:{'month': $('#month_sel').val()},
             success:function(response){
                 //console.log(response);
                 //console.log(data);
