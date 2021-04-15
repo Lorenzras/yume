@@ -21,9 +21,9 @@
                 <div class="col-12">
                     <h1 class="pagetitle ">ランキング</h1>
                 </div>
-                    
+
             </div>
-            
+
             <div class="card border-primary mb-3 mt-4">
                 <div class="card-header text-center">
                     <label for="month_sel"></label>
@@ -31,26 +31,26 @@
                 </div>
                 <div class="card-body text-center">
                     <div class="row justify-content-center">
-                        
+
                         <div class="col-6 col-*">
                         <span class="text-secondary">{{ __('Purchases') }}</span>
-                        <h2 >{{ $nippo['totalPurchase'] }}</h2>
+                        <h2 >{{ $nippo['totalPurchase'] ?? 'X' }}</h2>
                         </div>
                         <div class="col-6 col-*">
                         <span class="text-secondary">{{ __('Contracts') }}</span>
-                        <h2>{{ $nippo['totalContract'] }}</h2>
+                        <h2>{{ $nippo['totalContract'] ?? 'X'}}</h2>
                         </div>
                         <div class="col-6 col-*">
                         <span class="text-secondary">{{ __('Intermediaries') }}</span>
-                        <h2>{{ $nippo['totalIntermediary'] }}</h2>
+                        <h2>{{ $nippo['totalIntermediary'] ?? 'X' }}</h2>
                         </div>
                         <div class="col-6 col-*">
                         <span class="text-secondary">{{ __('Distributions') }}</span>
-                        <h2>{{ $nippo['totalDistribution'] }}</h2>
+                        <h2>{{ $nippo['totalDistribution'] ?? 'X' }}</h2>
                         </div>
                         <div class="col-6 col-*">
                         <span class="text-secondary">{{ __('Rollers') }}</span>
-                        <h2>{{ $nippo['totalRoller'] }}</h2>
+                        <h2>{{ $nippo['totalRoller'] ?? 'X' }}</h2>
                         </div>
                     </div>
                     <div class="col-12">
@@ -59,13 +59,13 @@
                     <div class="row">
                         <div class="col-6 col-md-6 ">
                         <span class="text-secondary">{{ __('Buy') }}</span>
-                        <h4>{{ $nippo['totalBuy'] }}</h4>
+                        <h4>{{ $nippo['totalBuy'] ?? 'X' }}</h4>
                             </div>
                         <div class="col-6 col-md-6">
                             <span class="text-secondary">{{ __('Sell') }}</span>
-                            <h4>{{ $nippo['totalSell'] }}</h4>
+                            <h4>{{ $nippo['totalSell'] ?? 'X' }}</h4>
                         </div>
-                        
+
                     </div>
                     <div class="col-12">
                         <hr>
@@ -73,27 +73,27 @@
                     <div class="row ">
                         <div class="col-6 col-md-4 ">
                             <span class="text-secondary">{{ __('Brokerage Fee') }}</span>
-                            <h4>{{ $nippo['totalBrokerage'] }}</h4>
+                            <h4>{{ $nippo['totalBrokerage'] ?? 'X' }}</h4>
                         </div>
                         <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Loan Agency') }}</span>
-                            <h4>{{ $nippo['totalLoan'] }}</h4>
+                            <h4>{{ $nippo['totalLoan'] ?? 'X' }}</h4>
                         </div>
                         <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Fine') }}</span>
-                            <h4>{{ $nippo['totalFine'] }}</h4>
+                            <h4>{{ $nippo['totalFine'] ?? 'X' }}</h4>
                         </div>
                         <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Fire Insurance') }}</span>
-                            <h4>{{ $nippo['totalFireInsurance'] }}</h4>
+                            <h4>{{ $nippo['totalFireInsurance'] ?? 'X' }}</h4>
                         </div>
                         <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Reform') }}</span>
-                            <h4>{{ $nippo['totalReform'] }}</h4>
+                            <h4>{{ $nippo['totalReform'] ?? 'X' }}</h4>
                         </div>
                         <div class="col-6 col-md-4">
                             <span class="text-secondary">{{ __('Solar Panel') }}</span>
-                            <h4>{{ $nippo['totalSolarPanel'] }}</h4>
+                            <h4>{{ $nippo['totalSolarPanel'] ?? 'X' }}</h4>
                         </div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
         window.location.href = '/nippo/ranking/' + $('#month_sel').val();
     });
 
-    
+
 
     $("#category").change(function () {
         $.ajax({
@@ -189,9 +189,9 @@
                 console.log(response);
             }
          });
-        
-    }); 
 
-    $('#category').trigger('change'); 
+    });
+
+    $('#category').trigger('change');
 
 @endpush
