@@ -28,7 +28,10 @@ Route::get('/nippo/create', [App\Http\Controllers\NippoController::class, 'creat
 Route::post('/nippo/store', [App\Http\Controllers\NippoController::class, 'store'])->name('nippo.store');
 
 Route::get('/nippo/report/{month}', [App\Http\Controllers\NippoReportController::class, 'show'])->name('nippo.report');
+Route::get('/nippo/ranking/{month}/{type}', [App\Http\Controllers\NippoRankingController::class, 'show_ranking'])->name('nippo_rankingtype');
+
 Route::get('/nippo/ranking/{month}', [App\Http\Controllers\NippoRankingController::class, 'show'])->name('nippo.ranking');
+
 
 Route::get('/datatable-example', function(){
     return view('datatable-example');

@@ -22,6 +22,7 @@
 }
 
  .appsub {
+
     font-family: 'Helvetica Neue', sans-serif; 
     font-size: 3vw; 
     font-weight: bold; 
@@ -38,6 +39,11 @@
 .fasbtn {
     padding-right: 4vw;
     padding-left : 4vw;
+}
+
+.fa-shadow {
+    filter:drop-shadow(20px 10px 1px red);
+    
 }
 
 .btn-primary {

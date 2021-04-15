@@ -38,6 +38,32 @@ class Nippo extends Model
             );
     }
 
+    public function get_all_rankings_by_month($month, $type){
+        $start = Carbon::parse($month)->todatestring();
+        $end = Carbon::parse($month)->endOfMonth()->todatestring();
+
+        /* $summed = $this->query()
+            ->select('nippos.user_id')
+            ->selectRaw('SUM(`'. $type .'`) as totalResult')
+            ->whereBetween('generated_at',[$start, $end])
+            ->groupBy('user_id')
+            ->orderByDesc('totalResult')
+            ->get(); */
+
+        $summed = $this->query()
+        ->select('nippos.user_id', 'users.name')
+        ->join("users", "users.id","=","nippos.user_id")
+        ->selectRaw('SUM(`'. $type .'`) as totalResult')
+        ->whereBetween('generated_at',[$start, $end])
+        ->groupBy('user_id')
+        ->orderByDesc('totalResult')
+        ->get(); 
+
+
+        return $summed;
+
+    }
+
     public function get_all_summed($month) {
         $start = Carbon::parse($month)->todatestring();
         $end = Carbon::parse($month)->endOfMonth()->todatestring();
@@ -72,86 +98,89 @@ class Nippo extends Model
 
     function rankings($dt_sum) {
         $authid = auth()->user()->id;
-        $collection = collect([]);
-
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalInterview;
+        //$collection = collect([]);
+        $collection = [];
+       
+       /*  $sum = $dt_sum->where('user_id',$authid)->first()->totalInterview;
         $ranking = ($dt_sum->where('totalInterview', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalInterview'] = $ranking; */
+    
 
-        $dt_sum = $dt_sum->sortByDesc('totalAssistance');
+        /* $dt_sum = $dt_sum->sortByDesc('totalAssistance');
         $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
         $ranking = ($dt_sum->where('totalAssistance', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalAssistance'] =  $ranking; */
 
         $dt_sum = $dt_sum->sortByDesc('totalPurchase');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalPurchase;
         $ranking = ($dt_sum->where('totalPurchase', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        //dd($sum);
+        $collection['totalPurchase'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalContract');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalContract;
         $ranking = ($dt_sum->where('totalContract', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalContract'] =  $ranking;
 
-        $dt_sum = $dt_sum->sortByDesc('totalSettlement');
+        /* $dt_sum = $dt_sum->sortByDesc('totalSettlement');
         $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
         $ranking = ($dt_sum->where('totalSettlement', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalSettlement'] =  $ranking; */
 
         $dt_sum = $dt_sum->sortByDesc('totalIntermediary');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalIntermediary;
         $ranking = ($dt_sum->where('totalIntermediary', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalIntermediary'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalDistribution');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalDistribution;
         $ranking = ($dt_sum->where('totalDistribution', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalDistribution'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalRoller');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalRoller;
         $ranking = ($dt_sum->where('totalRoller', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalRoller'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalBuy');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalBuy;
         $ranking = ($dt_sum->where('totalBuy', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalBuy'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalSell');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalSell;
         $ranking = ($dt_sum->where('totalSell', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalSell'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalBrokerage');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalBrokerage;
         $ranking = ($dt_sum->where('totalBrokerage', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalBrokerage'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalLoan');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalLoan;
         $ranking = ($dt_sum->where('totalLoan', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalLoan'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalFine');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalFine;
         $ranking = ($dt_sum->where('totalFine', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalFine'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalFireInsurance');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalFireInsurance;
         $ranking = ($dt_sum->where('totalFireInsurance', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalFireInsurance'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalReform');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalReform;
         $ranking = ($dt_sum->where('totalReform', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalReform'] =  $ranking;
 
         $dt_sum = $dt_sum->sortByDesc('totalSolarPanel');
-        $sum = $dt_sum->where('user_id',$authid)->first()->totalAssistance;
+        $sum = $dt_sum->where('user_id',$authid)->first()->totalSolarPanel;
         $ranking = ($dt_sum->where('totalSolarPanel', '>', $sum)->count()) + 1;
-        $collection[] =  $ranking;
+        $collection['totalSolarPanel'] =  $ranking;
         
         //dd($collection);
 

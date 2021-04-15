@@ -28,6 +28,11 @@ td {
 }
 
 
+.pagetitle {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
 
 .dropdown-item{
     text-align: center;

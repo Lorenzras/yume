@@ -60,6 +60,13 @@ class NippoRankingController extends Controller
         return view('nippo.ranking', compact('nippo','month') );
     }
 
+    public function show_ranking($month, $type){
+        $nippo = new Nippo;
+        
+       return $nippo->get_all_rankings_by_month($month, $type);
+
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

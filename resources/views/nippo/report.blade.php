@@ -19,38 +19,37 @@
                         <a href="/all-tweets-csv" class="btn btn-primary">詳細はCSVとして保存</a>
                     </div>
                     <div class="card-body text-center">
-                        <div class="row ">
-                            <div class="col-6 col-md-3 ">
+                        <div class="row justify-content-center">
+                            <!-- <div class="col-6 col-md-3 ">
                             <span class="text-secondary">{{ __('Interviews') }}</span>
                             <h4>{{ $nippo->sum('interview') }}</h4>
-                            </div>
-                            <div class="col-6 col-md-3">
+                            </div> -->
+                            <!-- <div class="col-6 col-md-3">
                             <span class="text-secondary">{{ __('Assistances') }}</span>
                             <h4>{{ $nippo->sum('assistance') }}</h4>
-                            </div>
-                            <div class="col-6 col-md-3">
+                            </div> -->
+                            <div class="col-6 col-md-2">
                             <span class="text-secondary">{{ __('Purchases') }}</span>
                             <h4>{{ $nippo->sum('purchase') }}</h4>
                             </div>
-                            <div class="col-6 col-md-3">
+                            <div class="col-6 col-md-2">
                             <span class="text-secondary">{{ __('Contracts') }}</span>
                             <h4>{{ $nippo->sum('contract') }}</h4>
                             </div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-6 col-md-3 ">
+                      
+                            <!-- <div class="col-6 col-md-3 ">
                             <span class="text-secondary">{{ __('Settlements') }}</span>
                             <h4>{{ $nippo->sum('settlement') }}</h4>
-                            </div>
-                            <div class="col-6 col-md-3">
+                            </div> -->
+                            <div class="col-6 col-md-2">
                             <span class="text-secondary">{{ __('Intermediaries') }}</span>
                             <h4>{{ $nippo->sum('intermediary') }}</h4>
                             </div>
-                            <div class="col-6 col-md-3">
+                            <div class="col-6 col-md-2">
                             <span class="text-secondary">{{ __('Distributions') }}</span>
                             <h4>{{ $nippo->sum('distribution') }}</h4>
                             </div>
-                            <div class="col-6 col-md-3">
+                            <div class="col-6 col-md-2">
                             <span class="text-secondary">{{ __('Rollers') }}</span>
                             <h4>{{ $nippo->sum('roller') }}</h4>
                             </div>
