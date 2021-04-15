@@ -102,14 +102,15 @@
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row justify-content-center mb-3 mt-3">
-        <div class=" col-5 pt-2">
-            <h1 class="pagetitle ">トップ５</h1>
+<div class="container-fluid mb-5">
+    <div class="row justify-content-center mt-3">
+        <div class=" center-block col-xs-6 col-md-4 pt-2">
+            {{-- <h1 class="pagetitle ">トップ５</h1> --}}
+            <img class="" width="200px" src="{{ URL::asset('img/top5.png') }}" alt="">
         </div>
-        <div class="col-5">
-        <div class="text-secondary ">種別</div>
-        <select　class="custom-select" name="category" id="category">
+        <div class="col-xs-6 col-md-4">
+
+            <select　class="custom-select" name="category" id="category">
                 <option value="purchase">{{ __('Purchases') }}</option>
                 <option value="contract">{{ __('Contracts') }}</option>
                 <option value="intermediary">{{ __('Intermediaries') }}</option>
@@ -126,22 +127,23 @@
             </select>
         </div>
     </div>
+
     <div class="row justify-content-center">
-    <div class="col-9">
-        <table class="table table-hover" id="records_table">
-        <thead>
-            <tr>
-            <th scope="col">ランク</th>
-            <th scope="col">数字</th>
-            <th scope="col">氏名</th>
-            </tr>
-        </thead>
-        <tbody id="tbody_ranking">
+        <div class="col-xs-12 col-md-8">
+            <table class="table table-hover" id="records_table">
+            <thead>
+                <tr>
+                <th scope="col">ランク</th>
+                <th scope="col">数字</th>
+                <th scope="col">氏名</th>
+                </tr>
+            </thead>
+            <tbody id="tbody_ranking">
 
-        </tbody>
-        </table>
+            </tbody>
+            </table>
 
-    </div>
+        </div>
 
     </div>
 
