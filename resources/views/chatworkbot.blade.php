@@ -20,7 +20,7 @@ curl_setopt($cdata, CURLOPT_POST, 1);
 curl_setopt($cdata, CURLOPT_RETURNTRANSFER, 1);
 
 $ret = curl_exec($cdata);
-curl_close($data);
+curl_close($cdata);
 
 ?>
 
