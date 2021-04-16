@@ -22,14 +22,17 @@ Route::get('/shuekibattle', function() {
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
+//日報
 Route::get('/nippo/{nippo}/edit', [App\Http\Controllers\NippoController::class, 'edit'])->name('nippo.edit');
 Route::put('/nippo/{nippo}/update', [App\Http\Controllers\NippoController::class, 'update'])->name('nippo.update');
 Route::get('/nippo/create', [App\Http\Controllers\NippoController::class, 'create'])->name('nippo.create');
 Route::post('/nippo/store', [App\Http\Controllers\NippoController::class, 'store'])->name('nippo.store');
-
 Route::get('/nippo/report/{month}', [App\Http\Controllers\NippoReportController::class, 'show'])->name('nippo.report');
 Route::get('/nippo/ranking/{month}/{type}', [App\Http\Controllers\NippoRankingController::class, 'show_ranking'])->name('nippo_rankingtype');
 Route::get('/nippo/ranking/{month}', [App\Http\Controllers\NippoRankingController::class, 'show'])->name('nippo.ranking');
+
+//顧客管理
+Route::get('/kokyakukanri/search', [App\Http\Controllers\KokyakuController::class, 'index'])->name('kokyaku.index');
 
 
 Route::get('/datatable-example', function(){

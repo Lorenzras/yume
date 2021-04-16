@@ -47,7 +47,7 @@
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>Peanut Butter Chocolate Cake with Kool-aid</td>
+                                <td>テスト</td>
                                 <td>2</td>
                                 <td>150</td>
                             </tr>
@@ -59,15 +59,19 @@
         </div>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
-    <script>
 
+     <script>
         $(function () {
-            $('#product-table').DataTable({
+            // datatableの設定を変更
+            $("#product-table").DataTable({
                 processing: true,
-                serverSide: false
+                serverSide: false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Japanese.json"
+                }
             });
         });
-
     </script>
+
 </body>
 </html>

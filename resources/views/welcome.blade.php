@@ -34,7 +34,7 @@
             <a class="btn btn-primary  btn-lg btn-block shadow rounded-pill buttontext" href="{{ route('nippo.create') }}" role="button"><i class="fasbtn fas fa-edit"></i>日報</a>
         </div>
         <div class="col-10 mb-4 ">
-            <a class="btn btn-lg btn-primary btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-users"></i>顧客管理</a>
+            <a class="btn btn-lg btn-primary btn-block shadow rounded-pill buttontext" href="{{ route('kokyaku.index') }}" role="button"><i class="fasbtn fas fa-users"></i>顧客管理</a>
         </div>
         <div class="col-10 mb-4 ">
             <a class="btn btn-lg btn-primary  btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-images"></i>物件写真管理</a>
