@@ -1,10 +1,10 @@
 <?php
 
-
+error_log('Some message here.');
 $raw = file_get_contents('php://input');
 $receive = json_decode($raw, true);
 
-if ($receive['webhook_event']['account_id'] == '1qh9jubt8pcqi' ) exit();
+//if ($receive['webhook_event']['account_id'] == '1qh9jubt8pcqi' ) exit();
 
 $message = $receive['webhook_event']['body'];
 
@@ -23,5 +23,3 @@ $ret = curl_exec($cdata);
 curl_close($cdata);
 
 ?>
-
-hello
