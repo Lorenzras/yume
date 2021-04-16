@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/chatworkbot', function() {
+Route::post('/chatworkbot', function() {
     return view('chatworkbot');
 });
 
