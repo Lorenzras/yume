@@ -12,7 +12,7 @@ class ChatworkController extends Controller
     public function handle(Request $request)
     {
         // Perform your action
-        //Log::info('hello ' . $request);
+        Log::info('hello ' . $request);
         
         return "success!";
 
