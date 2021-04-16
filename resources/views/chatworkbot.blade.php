@@ -1,12 +1,13 @@
 <?php
 
-error_log('Some message here.');
-$raw = file_get_contents('php://input');
+
+$raw =  Request::getContent();
 $receive = json_decode($raw, true);
 
 //if ($receive['webhook_event']['account_id'] == '1qh9jubt8pcqi' ) exit();
 
-$message = $receive['webhook_event']['body'];
+//$message = $receive['webhook_event']['body'];
+$message = "hellosss";
 
 $reply = array('body' => $message );
 
@@ -21,5 +22,7 @@ curl_setopt($cdata, CURLOPT_RETURNTRANSFER, 1);
 
 $ret = curl_exec($cdata);
 curl_close($cdata);
+
+//dd($ret);
 
 ?>
