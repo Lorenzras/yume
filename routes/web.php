@@ -19,6 +19,12 @@ Auth::routes();
 Route::get('/shuekibattle', function() {
     return view('shuekibattle/main');
 });
+
+Route::get('/chatworkbot', function() {
+    return view('chatworkbot');
+});
+
+
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 

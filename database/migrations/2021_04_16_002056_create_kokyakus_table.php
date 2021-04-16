@@ -15,6 +15,11 @@ class CreateKokyakusTable extends Migration
     {
         Schema::create('kokyakus', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 50);
+            $table->string('tenpo', 50);
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->string('tel', 15);
+            $table->boolean('isBuyer');
             $table->timestamps();
         });
     }
