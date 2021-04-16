@@ -4,6 +4,8 @@
 $raw =  Request::getContent();
 $receive = json_decode($raw, true);
 
+Log::info($receive);
+
 //if ($receive['webhook_event']['account_id'] == '1qh9jubt8pcqi' ) exit();
 
 //$message = $receive['webhook_event']['body'];
