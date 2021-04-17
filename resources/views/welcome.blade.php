@@ -48,6 +48,11 @@
         <div class="col-10 mb-4 ">
             <a class="btn btn-lg btn-primary btn-block shadow rounded-pill buttontext" href="#" role="button"><i class="fasbtn fas fa-user-cog"></i>個人設定</a>
         </div>
+        <form method="POST" action="\chatworkbot">
+            <button type="submit" class="btn btn-primary">
+                {{ __('Login') }}
+            </button>
+        </form>
     </div>
 </div>
 @endsection
